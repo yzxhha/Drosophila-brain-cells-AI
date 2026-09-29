@@ -1,0 +1,34 @@
+import json
+from pathlib import Path
+
+
+def create_example_csv(path: str = "data/example_cell_expression.csv") -> None:
+    rows = [
+        {
+            "TH": 3.2, "DAT": 2.8, "Ddc": 2.5, "Ple": 1.0,
+            "Gad1": 0.4, "Gad2": 0.2, "vGAT": 0.1,
+            "VGlut": 0.2, "Or42a": 0.1, "Ir25a": 0.2,
+            "C929": 0.3,
+        },
+        {
+            "TH": 0.2, "DAT": 0.3, "Ddc": 0.1, "Ple": 0.1,
+            "Gad1": 2.8, "Gad2": 2.4, "vGAT": 2.3,
+            "VGlut": 0.5, "Or42a": 0.2, "Ir25a": 0.2,
+            "C929": 0.4,
+        },
+        {
+            "TH": 0.2, "DAT": 0.3, "Ddc": 0.1, "Ple": 0.1,
+            "Gad1": 0.2, "Gad2": 0.1, "vGAT": 0.1,
+            "VGlut": 2.9, "Or42a": 0.5, "Ir25a": 0.4,
+            "C929": 0.5,
+        },
+    ]
+    out = Path(path)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    import pandas as pd
+    pd.DataFrame(rows).to_csv(out, index=False)
+    print(f"Created example CSV at {out}")
+
+
+if __name__ == "__main__":
+    create_example_csv()
