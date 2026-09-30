@@ -1,0 +1,66 @@
+/* v4 minimalist white style */
+:root{
+  --bg: #ffffff;
+  --muted: #f5f7fb;
+  --card: rgba(255,255,255,0.9);
+  --accent: #6c8cf5;
+  --text: #0b1220;
+  --muted-text: #5b6670;
+}
+
+/* page background */
+[data-testid="stAppViewContainer"] {
+  background: var(--bg);
+}
+
+h1, h2, h3, p {
+  color: var(--text);
+}
+
+/* card */
+.card{
+  background: var(--card);
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: 0 6px 18px rgba(20,30,55,0.06);
+  border: 1px solid rgba(16,24,40,0.04);
+  margin-bottom: 12px;
+}
+.card-title{
+  font-size: 14px;
+  color: var(--muted-text);
+}
+.card-type{
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 6px;
+  color: var(--text);
+}
+.card-confidence{
+  font-size: 13px;
+  margin-top: 8px;
+  color: var(--muted-text);
+}
+.card-scores{
+  margin-top: 10px;
+}
+.score-row{
+  display:flex;
+  justify-content:space-between;
+  font-size:12px;
+  color:var(--muted-text);
+  padding: 2px 0;
+}
+.score-row .gene{
+  font-weight:500;
+}
+
+/* sidebar tweaks */
+[aria-label="Sidebar"] .stButton>button{
+  border-radius: 999px;
+}
+
+/* make download buttons rounded */
+.stDownloadButton>button, .stButton>button{
+  border-radius: 10px;
+}
